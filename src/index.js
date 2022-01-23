@@ -1,13 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+//import external styles
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/font-awesome/css/font-awesome.min.css';
+import "https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js";
+
+//import router
+import {BrowserRouter} from "react-router-dom";
+
+//import redux store
+import store from './redux/store';
+import {Provider} from 'react-redux';
+
+//import custom css
+import './index.css';
+
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
+    <Provider store={store}>
     <App />
-  </React.StrictMode>,
+    </Provider>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
